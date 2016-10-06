@@ -27,10 +27,10 @@ def add_item_rater_data(apps, schema_editor):
         contents = csv.reader(infile, delimiter="\t")
         for row in contents:
             rater = Rater.objects.get(id=row[0])
-            item = Item.objects.get(id=row[0])
+            item = Item.objects.get(id=row[1])
             Data.objects.create(rater=rater, item=item, rating=row[2], time_stamp=row[3])
 
-
+            
 class Migration(migrations.Migration):
 
     dependencies = [

@@ -1,4 +1,5 @@
 from django.db import models
+from django.db import Avg
 
 
 class Rater(models.Model):
@@ -6,6 +7,9 @@ class Rater(models.Model):
     gender = models.CharField(max_length=20)
     occupation = models.CharField(max_length=40)
     zip_code = models.CharField(max_length=15)
+
+    def rater_avg(self):
+        return Data.objects.filter(rater=self).aggregate(Avg('rating'))
 
 
 class Item(models.Model):
@@ -36,6 +40,8 @@ class Item(models.Model):
     def __str__(self):
         return self.movie_title
 
+    def movie_rating(self):
+        return Data.objects.filter(item=self).aggregate(Avg('rating'))
 
 class Data(models.Model):
     rater = models.ForeignKey(Rater)
