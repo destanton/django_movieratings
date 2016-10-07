@@ -1,5 +1,5 @@
 from django.db import models
-from django.db import Avg
+from django.db.models import Avg
 
 
 class Rater(models.Model):
@@ -43,8 +43,14 @@ class Item(models.Model):
     def movie_rating(self):
         return Data.objects.filter(item=self).aggregate(Avg('rating'))
 
+    def top_20(self, movie_rating):
+        pass
+
 class Data(models.Model):
     rater = models.ForeignKey(Rater)
     item = models.ForeignKey(Item)
     rating = models.IntegerField()
     time_stamp = models.IntegerField()
+
+    def __str__(self):
+        return str(self.rating)
