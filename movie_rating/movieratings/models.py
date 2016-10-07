@@ -40,6 +40,7 @@ class Item(models.Model):
     def __str__(self):
         return self.movie_title
 
+    @property
     def movie_rating(self):
         return Data.objects.filter(item=self).aggregate(Avg('rating'))
 

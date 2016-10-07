@@ -5,6 +5,13 @@
     <title>Welcome to the Movie Rating Page!</title>
   </head>
   <body>
-    <h1>I love Python!</h1>
+    <h1>This is the Movie Rating Page!</h1>
+
+      {% for rating in top_20 %}
+        <a href="/movies/"> {{ rating.movie_rating }} </a>
+        {{ rating.movie_title }}
+        {{ rating.imdb_url }}
+        <br>
+      {% endfor %}
   </body>
 </html>
