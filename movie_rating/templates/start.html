@@ -3,14 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Welcome to the Movie Rating Page!</title>
+
   </head>
   <body>
-    <h1>This is the Movie Rating Page!</h1>
-
+    <h1>Top 20 Movies by Rating!</h1>
+      <a href="/raters/"> Raters &nbsp; </a>
+      <!-- <br> -->
+      <a href="/movies/"> All Movies </a>
+      <br>
       {% for rating in top_20 %}
-        <a href="/movies/"> {{ rating.movie_rating }} </a>
-        {{ rating.movie_title }}
-        {{ rating.imdb_url }}
+      <br>
+        <a href="/movies/"> {{ rating.movie_title }} {{ rating.movie_rating }} </a>
+
+        <!-- {{ rating.imdb_url }} -->
         <br>
       {% endfor %}
   </body>

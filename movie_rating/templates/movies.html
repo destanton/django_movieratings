@@ -5,6 +5,13 @@
     <title>Movies Page</title>
   </head>
   <body>
-    <h1>This is the Movie Page</h1>
+    <h1>All Movies</h1>
+    <a href="/">Back</a>
+    <h2>{% for row in all_movies %}</h2>
+
+    <a href="/movie/">{{row.movie_title}}</a>
+    <p>
+      {% endfor %}
+    </p>
   </body>
 </html>

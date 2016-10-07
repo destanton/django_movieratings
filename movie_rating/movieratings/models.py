@@ -47,6 +47,7 @@ class Item(models.Model):
     def top_20(self, movie_rating):
         pass
 
+
 class Data(models.Model):
     rater = models.ForeignKey(Rater)
     item = models.ForeignKey(Item)
