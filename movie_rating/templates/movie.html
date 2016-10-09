@@ -16,5 +16,11 @@
 
         {% endfor %}
     </p>
+    <p>
+      {% for rater in raters %}
+      <br>  Rater ID: {{rater.rater.id}} 
+        Rating: {{rater.rating}}
+        {% endfor %}
+    </p>
   </body>
 </html>

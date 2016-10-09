@@ -9,7 +9,7 @@
     <a href="/">Back</a>
     <h2>{% for row in all_movies %}</h2>
 
-    <a href="/movie/{{ row.id }}">{{row.movie_title}}</a>
+    <a href="/movie/{{row.id}}">{{row.movie_title}}</a>
     <p>
       {% endfor %}
     </p>

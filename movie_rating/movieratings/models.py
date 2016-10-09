@@ -8,6 +8,7 @@ class Rater(models.Model):
     occupation = models.CharField(max_length=40)
     zip_code = models.CharField(max_length=15)
 
+    @property
     def rater_avg(self):
         return Data.objects.filter(rater=self).aggregate(Avg('rating'))
 
