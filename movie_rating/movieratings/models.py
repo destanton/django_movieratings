@@ -44,8 +44,10 @@ class Item(models.Model):
     def movie_rating(self):
         return Data.objects.filter(item=self).aggregate(Avg('rating'))
 
+    @property
     def top_20(self, movie_rating):
         pass
+        # return Data.objects.annotate(average=Avg('rating')).order_by('-rating')[:20]
 
 
 class Data(models.Model):

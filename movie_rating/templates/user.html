@@ -6,11 +6,14 @@
   </head>
   <body>
     <h1>User Information</h1>
-    <a href="/">Back</a>
-    <h2>{{ user.age }} {{ user.occupation}}</h2>
-    <h3>{% for row in movies %}</h3>
+    <a href="/raters/">Back</a>
+    <h2> Age: {{ user.age }} </h2>
+    <h3>Occupation: {{ user.occupation }}</h3>
+
+    <h4>Movies Reviewed / Review Score
+        {% for row in movies %}</h4>
         <p>
-          {{ row.item.movie_title }} {{ row.rating }}
+          {{ row.item.movie_title }} / {{ row.rating }}
         </p>
         {% endfor %}
   </body>

@@ -6,7 +6,8 @@ from django.db.models import Avg
 
 def index_view(request):
     context = {
-        "top_20": Item.objects.all()
+        "top_20": Item.objects.annotate(average_rating=Avg('data__rating')).order_by('-average_rating')[:20]
+        # "top_20": Item.objects.all()
 
 
 
@@ -17,6 +18,7 @@ def index_view(request):
 
 def movie_view(request):
     context = {
+
         "all_movies": Item.objects.all()
 
 
@@ -40,3 +42,12 @@ def user_info(request, rater_id):
 
     }
     return render(request, "user.html", context)
+
+
+def movie_info(request, movie_id):
+    context = {
+        "movie": Item.objects.get(id=movie_id),
+        "rating": Item.objects.filter(id=movie_id),
+        
+    }
+    return render(request, "movie.html", context)
