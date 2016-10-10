@@ -9,8 +9,6 @@ def index_view(request):
         # "top_20": Item.objects.annotate(average_rating=Avg('data__rating')).order_by('-average_rating')[:20]
         # "top_20": Item.objects.all()
 
-
-
     }
     return render(request, "start.html", context)
     # return HttpResponse("This is the Movie Rating Homepage!")
@@ -18,6 +16,7 @@ def index_view(request):
 
 def twenty_view(request):
     context = {
+        # "indvmovie": Item.objects.get(id=row_id),
         "top_20": Item.objects.annotate(average_rating=Avg('data__rating')).order_by('-average_rating')[:20]
 
     }
@@ -38,7 +37,6 @@ def movie_view(request):
 def rater_view(request):
     context = {
         "raters": Rater.objects.all()
-
 
     }
     return render(request, "rater.html", context)

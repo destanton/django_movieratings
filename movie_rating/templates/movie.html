@@ -5,22 +5,26 @@
     <title> Movie Information </title>
   </head>
   <body>
+    <font color="#CD5C5C">
     <h1> Movie Information </h1>
-    <a href="/movies/"> Back </a>
-    <h2>Title: {{ movie.movie_title }} <br> Release Date: {{ movie.release_date}}</h2>
-    <h3> Average Rating: </h3>
-    <p>
-      {% for score in rating %}
+    </font>
+      <font color="#191970">
+      <a href="/movies/"> Back </a>
+      <h2>Title: {{ movie.movie_title }} <br> Release Date: {{ movie.release_date}}</h2>
+      <h3> Average Rating: </h3>
+      <p>
+        {% for score in rating %}
 
-        {{ score.movie_rating }}
+          {{ score.movie_rating }}
 
-        {% endfor %}
-    </p>
-    <p>
-      {% for rater in raters %}
-      <br>  Rater ID: {{rater.rater.id}} 
-        Rating: {{rater.rating}}
-        {% endfor %}
-    </p>
+          {% endfor %}
+      </p>
+        <p>
+          {% for rater in raters %}
+          <br>  Rater ID: {{rater.rater.id}}
+          Rating: {{rater.rating}}
+          {% endfor %}
+        </p>
+      </font>
   </body>
 </html>

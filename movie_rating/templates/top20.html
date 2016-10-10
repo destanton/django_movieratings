@@ -5,12 +5,17 @@
     <title>Top 20</title>
   </head>
   <body>
+    <font color="#CD5C5C">
     <h1>Top 20 Movies!</h1>
-    <a href="/">Back</a>
-      <br>
-      {% for rating in top_20 %}
-      <br>
-        <a href="/movies/">{{ rating.movie_title }} {{ rating.movie_rating }} </a>
-      {% endfor %}
+    </font>
+      <font color="#191970">
+      <a href="/">Back</a>
+        <br>
+        {% for rating in top_20 %}
+        <br>
+          <!-- {{ rating.id }} -->
+          <a href="/movies/{{row.id}}"> {{ rating.movie_title }} {{ rating.movie_rating }} </a>
+        {% endfor %}
+      </font>
   </body>
 </html>

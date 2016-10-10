@@ -5,12 +5,14 @@
     <title>Raters by Number</title>
   </head>
   <body>
-<h1> USERS BY ID </h1>
-<a href="/">Back</a>
-<h2> {% for row in raters %}</h2>
-<p>
-  <a href="/users/{{ row.id }}">{{ row.id }}</a>
-</p>
-  {% endfor %}
+      <font color="#CD5C5C">
+        <h1> USERS BY ID </h1>
+      </font>
+        <a href="/">Back</a>
+          <h2> {% for row in raters %}</h2>
+            <p>
+              <a href="/users/{{ row.id }}">{{ row.id }}</a>
+            </p>
+              {% endfor %}
   </body>
 </html>
