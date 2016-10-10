@@ -5,6 +5,7 @@
     <title>Top 20</title>
   </head>
   <body>
+    <img src="/static/starwars.jpeg">
     <font color="#CD5C5C">
     <h1>Top 20 Movies!</h1>
     </font>
@@ -14,7 +15,7 @@
         {% for rating in top_20 %}
         <br>
           <!-- {{ rating.id }} -->
-          <a href="/movies/{{row.id}}"> {{ rating.movie_title }} {{ rating.movie_rating }} </a>
+          <a href="{% url 'movie_view' rating.id %}"> {{ rating.movie_title }} {{ rating.movie_rating }} </a>
         {% endfor %}
       </font>
   </body>

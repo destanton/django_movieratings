@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'^movies/$', movie_view),
     url(r'^raters/$', rater_view),
     url(r'^users/(?P<rater_id>\d+)/$', user_info),
-    url(r'^movie/(?P<movie_id>\d+)/$', movie_info)
+    url(r'^movie/(?P<movie_id>\d+)/$', movie_info, name="movie_view")
 ]
