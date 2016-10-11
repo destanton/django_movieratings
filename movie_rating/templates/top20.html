@@ -3,13 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>Top 20</title>
+    <style media="screen">
+      body{
+        background-color: lightgrey;
+        text-align: center;
+        color: #CD5C5C;
+      }
+    </style>
   </head>
   <body>
-    <img src="/static/starwars.jpeg">
-    <font color="#CD5C5C">
+    <img class ="img-responsive center-block" src="/static/starwars.jpeg">
+    <!-- <font color="#CD5C5C"> -->
     <h1>Top 20 Movies!</h1>
-    </font>
-      <font color="#191970">
+    <!-- </font> -->
+      <!-- <font color="#191970"> -->
       <a href="/">Back</a>
         <br>
         {% for rating in top_20 %}
@@ -17,6 +24,6 @@
           <!-- {{ rating.id }} -->
           <a href="{% url 'movie_view' rating.id %}"> {{ rating.movie_title }} {{ rating.movie_rating }} </a>
         {% endfor %}
-      </font>
+      <!-- </font> -->
   </body>
 </html>
